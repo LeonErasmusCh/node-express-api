@@ -1,22 +1,21 @@
 const express = require('express')
+var colors = require('colors');
 const app = express()
 const port = 3000
 
+app.use(express.json())
 
 //run with $node app.js
 
 const cars = [
     {
         id: "1",
-        make: "Ford",
-        year: "1983",
-        color: "Red"
+        make: "Ford"
     },
     {
         id: "2",
-        make: "Volkswagen",
-        year: "1960",
-        color: "Green"
+        make: "Volkswagen"
+
     }
 ]
 
@@ -36,11 +35,25 @@ app.get('/api/cars', (req, res) => {
 
 // Get car by id
 app.get('/api/cars/:id', (req, res) => {
-        res.send(`This is the CAR id: ${req.params.id}`)
+        //res.send(`This is the CAR id: ${req.params.id}`)
+        //res.json({massage : "This is the CAR id: " +req.params.id})
+        res.json(req.params.id)
+        
+})
+
+
+//POST
+app.post('/api/cars', (req, res) => {
+    const car = {
+        id: cars.length +1,
+        make: req.body.make
+    }
+    cars.push(car);
+    res.send(car);
 })
 
 
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening at http://localhost:${port}`.brightYellow)
 })

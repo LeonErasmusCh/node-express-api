@@ -9,6 +9,8 @@
   "author": "Leon Erasmus",
   "license": "ISC",
   "dependencies": {
+    "color": "^4.0.1",
+    "colors": "^1.4.0",
     "express": "^4.17.1"
   }
 }
