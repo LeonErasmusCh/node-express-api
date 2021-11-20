@@ -1,0 +1,14 @@
+{
+  "name": "express-api",
+  "version": "1.0.0",
+  "description": "test api",
+  "main": "app.js",
+  "scripts": {
+    "start": ""
+  },
+  "author": "Leon Erasmus",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
